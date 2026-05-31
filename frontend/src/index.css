@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+  body {
+    @apply bg-paper-50 text-ink-900 font-serif antialiased;
+    /* Subtle, paper-like grain via a low-contrast radial. */
+    background-image:
+      radial-gradient(at 20% 0%, rgba(196, 173, 132, 0.12), transparent 55%),
+      radial-gradient(at 80% 100%, rgba(138, 58, 47, 0.05), transparent 60%);
+    background-attachment: fixed;
+  }
+  ::selection {
+    @apply bg-accent/15 text-ink-900;
+  }
+}
+
+@layer components {
+  .ui-label {
+    @apply font-sans uppercase tracking-wide2 text-[11px] text-ink-500;
+  }
+  .quiet-divider {
+    @apply h-px w-12 bg-ink-400/40;
+  }
+
+  /* Kill the native scrollbar on the ask textarea in every browser. The
+     auto-grow logic already keeps height in sync with content, so there's
+     nothing useful for the scrollbar to do. */
+  .no-scrollbar {
+    -ms-overflow-style: none;        /* IE/Edge legacy */
+    scrollbar-width: none;           /* Firefox */
+    overflow: hidden;                /* belt + braces */
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;                   /* Chrome/Safari/Webkit */
+    width: 0;
+    height: 0;
+  }
+}
