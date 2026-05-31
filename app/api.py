@@ -27,14 +27,11 @@ app = FastAPI(
     description="Ask your memories. Warm, honest, cited answers from your journal.",
 )
 
-ALLOWED_ORIGINS = [
-    "http://localhost:5173",
-    "http://127.0.0.1:5173",
-]
-
+# Open CORS. The API is a read-only public endpoint over a synthetic corpus
+# with no auth and no cookies, so credentials are off and any origin is fine.
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=ALLOWED_ORIGINS,
+    allow_origins=["*"],
     allow_credentials=False,
     allow_methods=["GET", "POST", "OPTIONS"],
     allow_headers=["*"],

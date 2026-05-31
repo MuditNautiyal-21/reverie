@@ -1,0 +1,36 @@
+.git
+.gitignore
+.github
+.vscode
+.idea
+
+# Local env files — secrets are injected at runtime by HF Space.
+.env
+.env.*
+!.env.example
+
+# Python build artifacts
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+*.egg-info/
+build/
+dist/
+
+# Frontend lives on Vercel, not in the API image
+frontend/
+
+# Node leftovers in case anything wandered up a level
+node_modules/
+
+# The corpus is built once locally then loaded by app.index into Postgres.
+# It is not needed inside the runtime image.
+data/
+
+# Docs and assets the API does not need
+DEPLOY.md
+README.md
+*.log
+.DS_Store
