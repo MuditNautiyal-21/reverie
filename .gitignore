@@ -26,3 +26,4 @@ data/embeddings/
 
 # Logs
 *.log
+reverie-api/
