@@ -1,5 +1,7 @@
 # Reverie
 
+<img width="1875" height="1255" alt="hero" src="https://github.com/user-attachments/assets/f8144afa-bd5b-41d7-b3e1-860dd302d696" />
+
 A personal memory engine. You point it at a body of personal writing, ask a
 question in plain language, and it answers warmly with citations instead of
 returning a flat list of matches.
@@ -18,6 +20,9 @@ from. The reply addresses the writer in second person. The citations sit
 underneath, quieter, so the answer leads and the memories support it.
 
 ## How it works
+
+<img width="1037" height="688" alt="landing_state" src="https://github.com/user-attachments/assets/8c5a7b35-6df8-4568-999c-cde119a4e718" />
+
 
 Each entry is enriched once with mood, themes, tags, and a one-line summary by
 a single LLM call. The enriched corpus is embedded locally with
